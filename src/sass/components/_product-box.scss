@@ -97,5 +97,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .price {
+      display: flex;
+      align-items: center;
+    }
+    .old-price {
+      font-weight: 100;
+      text-decoration: line-through;
+    }
   }
 }
