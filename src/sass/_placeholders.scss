@@ -1,3 +1,4 @@
 %colortransition {
-  transition: background $bg-color-animation-time, color $txt-color-animation-time;
+  transition: background $bg-color-animation-time, color $txt-color-animation-time,
+    border $bg-color-animation-time;
 }
