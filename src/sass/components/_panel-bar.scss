@@ -79,6 +79,7 @@
           height: 13px;
           border-radius: 6px;
           background-color: #e1e1e1;
+          @extend %colortransition;
 
           &.active,
           &:hover {

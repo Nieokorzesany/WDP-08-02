@@ -14,6 +14,7 @@ header {
         a {
           color: #ffffff;
           font-size: 13px;
+          @extend %colortransition;
 
           &:hover {
             color: $primary;
@@ -70,6 +71,7 @@ header {
         display: inline-block;
         position: relative;
         color: #ffffff;
+        @extend %colortransition;
 
         .cart-icon {
           background-color: $primary;
@@ -144,6 +146,7 @@ header {
             border-top: 4px solid #ffffff;
             font-weight: 500;
             letter-spacing: 1px;
+            @extend %colortransition;
 
             &:hover,
             &.active {
