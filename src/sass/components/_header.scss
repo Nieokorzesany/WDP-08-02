@@ -172,6 +172,22 @@ header {
         align-items: center;
         position: relative;
 
+        &:hover {
+          background-color: $primary;
+          color: #ffffff;
+
+          i.fas {
+            color: #ffffff;
+          }
+          select:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #fff;
+            option {
+              color: black;
+            }
+          }
+        }
+
         i:first-child {
           color: $primary;
           position: absolute;
@@ -194,6 +210,11 @@ header {
           font-size: 14px;
           position: relative;
           z-index: 1;
+
+          &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #000;
+          }
         }
       }
 
