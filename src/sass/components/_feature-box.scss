@@ -40,6 +40,14 @@
     margin-top: -0.5rem;
     letter-spacing: 1px;
 
+    a {
+      color: rgb(42, 42, 42);
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
     h5 {
       font-weight: 600;
       margin: 0;
@@ -56,11 +64,12 @@
 
     i {
       background-color: $primary;
-      color: #ffffff;
+      color: $white;
       border-color: $primary;
     }
 
-    .content {
+    .content,
+    a {
       color: $primary;
     }
   }
