@@ -8,6 +8,11 @@
       size: cover;
       position: center;
     }
+    transition: opacity 0.1s ease-in;
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
 
     .details {
       padding: 15px 20px;
@@ -27,6 +32,18 @@
         text-align: right;
       }
     }
+  }
+
+  .cover_1 {
+    // background-image: url("https://cdn.pixabay.com/photo/2015/03/26/09/43/living-room-690174_960_720.jpg");
+  }
+
+  .cover_2 {
+    background-image: url("https://cdn.pixabay.com/photo/2017/01/07/17/48/interior-1961070_960_720.jpg");
+  }
+
+  .cover_3 {
+    background-image: url("https://cdn.pixabay.com/photo/2014/12/06/12/29/chair-558951_960_720.jpg");
   }
 
   .post-info {
