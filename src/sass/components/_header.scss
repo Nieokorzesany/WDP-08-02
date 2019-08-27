@@ -85,7 +85,7 @@ header {
       @include media-breakpoint-down(sm) {
         order: 2;
         p {
-          text-align: right;
+          text-align: center;
           font-size: 14px;
         }
       }
@@ -96,6 +96,7 @@ header {
         order: 1;
         align-self: flex-start;
         margin-top: 8px;
+        min-width: 160px;
       }
       .cart-box {
         display: inline-block;
@@ -144,6 +145,10 @@ header {
       @include media-breakpoint-down(sm) {
         align-self: flex-start;
         margin-top: 8px;
+        min-width: 160px;
+        img {
+          height: 50px;
+        }
       }
     }
   }
