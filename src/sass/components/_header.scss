@@ -25,17 +25,30 @@ header {
 
     .text-left ul li {
       margin-right: 1.5rem;
+      @include media-breakpoint-down(sm) {
+        margin-right: 0.3rem;
+        margin-left: 0.3rem;
+      }
 
       i {
         margin-left: 5px;
+        // @include media-breakpoint-down(sm) {
+        //   margin-left: 0;
+        // }
       }
     }
 
     .text-right ul li {
       margin-left: 1.5rem;
-
+      @include media-breakpoint-down(sm) {
+        margin-right: 0.3rem;
+        margin-left: 0.3rem;
+      }
       i {
         margin-right: 5px;
+        // @include media-breakpoint-down(sm) {
+        //   margin-right: 0;
+        // }
       }
     }
   }
@@ -45,6 +58,12 @@ header {
 
     .container > .row {
       height: 145px;
+    }
+
+    .container {
+      @include media-breakpoint-down(sm) {
+        align-items: flex-start;
+      }
     }
 
     .phone-number {
@@ -63,9 +82,21 @@ header {
           margin-right: 0.8rem;
         }
       }
+      @include media-breakpoint-down(sm) {
+        order: 2;
+        p {
+          text-align: right;
+          font-size: 14px;
+        }
+      }
     }
 
     .cart {
+      @include media-breakpoint-down(sm) {
+        order: 1;
+        align-self: flex-start;
+        margin-top: 8px;
+      }
       .cart-box {
         display: inline-block;
         position: relative;
@@ -107,6 +138,12 @@ header {
             background-color: lighten($primary, 10%);
           }
         }
+      }
+    }
+    .logo {
+      @include media-breakpoint-down(sm) {
+        align-self: flex-start;
+        margin-top: 8px;
       }
     }
   }
