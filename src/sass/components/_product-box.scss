@@ -23,7 +23,6 @@
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
     background: {
       color: #f4f5f7;
       size: contain;
@@ -37,6 +36,7 @@
       position: absolute;
       top: -30px;
       left: 50%;
+      z-index: 99;
       transform: translateX(-50%);
       background-color: #292929;
       border-radius: 50%;
@@ -48,6 +48,13 @@
       opacity: 0;
       display: flex;
       justify-content: space-between;
+    }
+
+    img {
+      width: 253px;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
@@ -97,6 +104,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .btn-outline.active {
       border-color: $primary;
       background: $primary;
@@ -107,10 +115,12 @@
         background: #000;
       }
     }
+
     .price {
       display: flex;
       align-items: center;
     }
+
     .old-price {
       margin-right: 15px;
       font-weight: 100;
