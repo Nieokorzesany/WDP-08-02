@@ -1,5 +1,19 @@
 .post-box {
   margin-bottom: 2rem;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+    .post-info {
+      h5 {
+        color: $primary;
+      }
+
+      button {
+        background: $primary;
+      }
+    }
+  }
 
   .cover {
     background: {
@@ -21,6 +35,7 @@
       display: flex;
       background-color: #ffffff;
       font-size: 14px;
+      color: #000;
 
       & > * {
         flex: 1 1 auto;
@@ -40,7 +55,7 @@
     padding: 25px 10px;
 
     h5 {
-      color: $primary;
+      color: #000;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -55,7 +70,10 @@
 
     .more {
       text-align: center;
-      padding-top: 30px;
+      padding-top: 20px;
+      button {
+        border: none;
+      }
     }
   }
 }
