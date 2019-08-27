@@ -45,14 +45,18 @@
           font-size: 18px;
           display: block;
 
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            border-bottom: 4px solid #e1e1e1;
+            @extend %colortransition;
+          }
           &.active,
           &:hover {
             &::before {
-              content: "";
-              position: absolute;
-              bottom: -4px;
-              left: 0;
-              width: 100%;
               border-bottom: 4px solid $primary;
             }
           }
@@ -79,6 +83,7 @@
           height: 13px;
           border-radius: 6px;
           background-color: #e1e1e1;
+          @extend %colortransition;
 
           &.active,
           &:hover {
