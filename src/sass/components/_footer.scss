@@ -3,6 +3,17 @@ footer {
     background-color: $footer-bg;
     padding: 3rem 0;
 
+    .col {
+      @media only screen and (max-width: 767px) {
+        min-width: 50%;
+      }
+      @media only screen and (max-width: 600px) {
+        text-align: center;
+        min-width: 100%;
+        padding: 0;
+      }
+    }
+
     .menu-wrapper {
       h6 {
         color: #ffffff;
@@ -19,6 +30,7 @@ footer {
             font-size: 14px;
             line-height: 30px;
             color: rgb(169, 169, 169);
+            @extend %colortransition;
 
             &:hover {
               color: #ffffff;
@@ -44,6 +56,15 @@ footer {
 
     .container > .row {
       height: 95px;
+      @media only screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .col {
+        @media only screen and (max-width: 767px) {
+          margin: 10px 0;
+        }
+      }
     }
 
     .copyright {
@@ -60,6 +81,9 @@ footer {
         margin: 0;
         padding: 0;
         list-style: none;
+        @media only screen and (max-width: 767px) {
+          text-align: center;
+        }
 
         li {
           display: inline-block;
@@ -68,6 +92,7 @@ footer {
           a {
             color: rgb(169, 169, 169);
             text-decoration: none;
+            @extend %colortransition;
 
             &:hover {
               color: $primary;

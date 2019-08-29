@@ -1,8 +1,8 @@
 <header>
   <div class="top-bar">
     <div class="container">
-      <div class="row">
-        <div class="col text-left">
+      <div class="row no-gutters">
+        <div class="col-8 col-sm text-left">
           <ul>
             <li>
               <a href="#">USD <i class="fas fa-caret-down"></i></a>
@@ -15,15 +15,21 @@
             </li>
           </ul>
         </div>
-        <div class="col text-right">
+        <div class="col-4 col-sm text-right">
           <ul>
-            <li>
+            <li class="d-none d-sm-inline-block">
               <a href="#"><i class="fas fa-user"></i> Login</a>
             </li>
-            <li>
+            <li class="d-none d-sm-inline-block">
               <a href="#"><i class="fas fa-lock"></i> Register</a>
             </li>
-            <li>
+            <li class="d-inline-block d-sm-none">
+              <a href="#"><i class="fas fa-user"></i></a>
+            </li>
+            <li class="d-inline-block d-sm-none">
+              <a href="#"><i class="fas fa-lock"></i></a>
+            </li>
+            <li class="d-inline-block">
               <a href="#"><i class="fas fa-bars"></i></a>
             </li>
           </ul>
@@ -37,13 +43,16 @@
         <div class="col text-left phone-number">
           <p><i class="fas fa-mobile-alt"></i> 2345 - 3560 - 222</p>
         </div>
-        <div class="col text-center">
+        <div class="col text-center d-none d-sm-inline-block">
+          <a href="#"><img src="./images/logo.png"/></a>
+        </div>
+        <div class="col d-inline-block d-sm-none logo">
           <a href="#"><img src="./images/logo.png"/></a>
         </div>
         <div class="col text-right cart">
           <a href="#" class="cart-box">
             <div class="cart-icon"><i class="fas fa-shopping-basket"></i></div>
-            <div class="cart-counter">0</div>
+            <div class="cart-counter">12345</div>
           </a>
         </div>
       </div>
