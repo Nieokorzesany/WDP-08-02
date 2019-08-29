@@ -225,3 +225,39 @@ header {
     }
   }
 }
+@media (max-width: map-get($grid-breakpoints, "xl")) {
+  header .menu-bar .container > .row {
+    height: auto;
+  }
+}
+@media (min-width: map-get($grid-breakpoints, "md")) and (max-width: map-get($grid-breakpoints, "xl")) {
+  header .menu-bar .container > .row {
+    .col {
+      order: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .menu {
+      flex: 1 0 auto;
+
+      ul {
+        width: 100%;
+
+        li {
+          flex-grow: 1;
+
+          a {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: map-get($grid-breakpoints, "md")) {
+  header .menu-bar .search-form .category {
+    display: none;
+  }
+}
