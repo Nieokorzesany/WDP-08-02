@@ -40,7 +40,7 @@
       transform: translateX(-50%);
       background-color: #292929;
       border-radius: 50%;
-      color: #ffffff;
+      color: $white;
       padding: 30px 15px 5px 15px;
     }
 
@@ -108,11 +108,11 @@
     .btn-outline.active {
       border-color: $primary;
       background: $primary;
-      color: #fff;
+      color: $white;
 
       &:hover {
-        border-color: #000;
-        background: #000;
+        border-color: $black;
+        background: $black;
       }
     }
 
