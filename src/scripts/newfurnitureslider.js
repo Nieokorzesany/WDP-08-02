@@ -4,7 +4,7 @@ const newFurnitureSlider = tns({
   controls: false,
   autoWidth: true,
   items: 1,
-  // slideBy: 1,
+  slideBy: 'page',
   container: '.new-furniture-slider',
   mouseDrag: true,
   swipeAngle: false,
@@ -12,16 +12,13 @@ const newFurnitureSlider = tns({
   navContainer: '.slider-pagination-dots',
   responsive: {
     576: {
-      items: 2,
-      slideBy: 2
+      items: 2
     },
-    960: {
-      items: 3,
-      slideBy: 3
+    992: {
+      items: 3
     },
     1200: {
-      items: 4,
-      slideBy: 4
+      items: 4
     }
   }
 });
