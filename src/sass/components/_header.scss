@@ -219,6 +219,60 @@ header {
         display: flex;
         align-items: center;
         position: relative;
+        font-size: 14px;
+
+        &:hover {
+          background-color: $primary;
+          color: #ffffff;
+          i.fas {
+            color: #ffffff;
+          }
+        }
+
+        ul.category-select {
+          margin: 0;
+          list-style: none;
+          padding: 0;
+          line-height: 15px;
+
+          span {
+            display: flex;
+            align-items: center;
+            height: 45px;
+            padding: 0 30px;
+            position: relative;
+          }
+          > li {
+            cursor: pointer;
+
+            &:hover > ul {
+              display: block;
+            }
+
+            > ul {
+              position: absolute;
+              width: 100%;
+              top: 100%;
+              left: 0;
+              display: none;
+
+              color: black;
+              list-style: none;
+              padding: 0;
+              padding-top: 1px;
+              text-align: center;
+              z-index: 20;
+              li {
+                background-color: #f8f9fa;
+                padding: 15px 0;
+                &:hover {
+                  background-color: $primary;
+                  color: #ffffff;
+                }
+              }
+            }
+          }
+        }
 
         i:first-child {
           color: $primary;

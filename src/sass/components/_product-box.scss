@@ -104,6 +104,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .btn-outline.active {
+      border-color: $primary;
+      background: $primary;
+      color: #fff;
+
+      &:hover {
+        border-color: #000;
+        background: #000;
+      }
+    }
     .price {
       display: flex;
       align-items: center;
