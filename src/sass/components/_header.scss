@@ -312,6 +312,8 @@ header {
 }
 @media (max-width: map-get($grid-breakpoints, "md")) {
   header .menu-bar {
+    padding: 15px 0;
+
     .search-form .category {
       display: none;
     }
