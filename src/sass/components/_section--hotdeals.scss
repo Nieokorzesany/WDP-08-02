@@ -30,8 +30,16 @@
 
   .photo {
     min-height: 290px;
-    background-size: cover;
-    background-position: center;
+    justify-content: center;
+    display: flex;
+
+    img {
+      width: auto;
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+    }
+
     &:hover {
       .buttons,
       .time {
@@ -51,6 +59,7 @@
 
   .time {
     position: absolute;
+    padding: 0;
     bottom: 0;
     list-style: none;
     opacity: 0;
