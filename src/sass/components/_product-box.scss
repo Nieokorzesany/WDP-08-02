@@ -77,8 +77,18 @@
         @extend .fa-star;
 
         &.full {
+          color: $primary;
           @extend .fas;
         }
+        &:hover ~ a {
+          color: rgb(42, 42, 42);
+          @extend .far;
+          @extend .fa-star;
+        }
+      }
+      &:hover > a {
+        color: $primary;
+        @extend .fas;
       }
     }
   }
