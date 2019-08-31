@@ -31,6 +31,9 @@
   .photo {
     min-height: 290px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 58436ef... Remove inline css
     justify-content: center;
     display: flex;
 
@@ -41,10 +44,13 @@
       min-height: 100%;
     }
 
+<<<<<<< HEAD
 =======
     background-size: cover;
     background-position: center;
 >>>>>>> ef345c4... Add Hot Deals left section
+=======
+>>>>>>> 58436ef... Remove inline css
     &:hover {
       .buttons,
       .time {
@@ -65,9 +71,13 @@
   .time {
     position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
     padding: 0;
 =======
 >>>>>>> ef345c4... Add Hot Deals left section
+=======
+    padding: 0;
+>>>>>>> 58436ef... Remove inline css
     bottom: 0;
     list-style: none;
     opacity: 0;
