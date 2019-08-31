@@ -66,6 +66,23 @@
   }
 
   .dots {
+    .carousel-indicators {
+      position: relative;
+      display: block;
+      bottom: 0;
+
+      li {
+        width: auto;
+        height: auto;
+        margin-right: 0;
+
+        &.active a,
+        &:hover a {
+          background-color: $primary;
+        }
+      }
+    }
+
     ul {
       margin: 0;
       padding: 0 0 0 1rem;
