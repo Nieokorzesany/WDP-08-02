@@ -4,13 +4,11 @@ import { tns } from './../../node_modules/tiny-slider/src/tiny-slider';
 const newFurnitureSlider = tns({
   controls: false,
   autoWidth: true,
-  items: 1,
   slideBy: 'page',
   container: '.new-furniture-slider',
   mouseDrag: true,
-  swipeAngle: false,
+  swipeAngle: 20,
   nav: false,
-  // navContainer: '.slider-pagination-dots',
   responsive: {
     576: {
       items: 2
@@ -27,11 +25,11 @@ const newFurnitureSlider = tns({
 const DOTS = document.getElementsByClassName('pagination-dot-li');
 const VIEWPORT_WIDTH = document.documentElement.clientWidth;
 
+// funkcja wyśiwetlająca odpowiednie kropki w zależności szerokości okna
 function showDot () {
   for (let i = 0; i < DOTS.length; i++) {
     DOTS[i].classList.remove('show-dot');
-    DOTS[0].classList.add('show-dot');
-    DOTS[0].classList.add('active');
+    DOTS[0].classList.add('show-dot', 'active');
     if (VIEWPORT_WIDTH >= 1200) {
       let numberofSlides = 4;
       if ((i + 1) % (numberofSlides + 1) === 0) {
@@ -60,9 +58,17 @@ function showDot () {
   }
 }
 showDot();
+
+// wywołanie funkcji showDot po zmianie szerokości okna
+let resizeId;
 window.addEventListener('resize', function () {
-  showDot();
+  clearTimeout(resizeId);
+  resizeId = setTimeout(doneResizing, 500);
 });
+
+function doneResizing () {
+  showDot();
+}
 
 //  obsługa klików
 //  funkcja ogólna
@@ -72,7 +78,6 @@ function click (target, callback) {
     return callback(e);
   });
 }
-
 // zmiana slajdów
 for (let i = 0; i < DOTS.length; i++) {
   let k = i + 1;
