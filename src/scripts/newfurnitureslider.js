@@ -25,7 +25,7 @@ const newFurnitureSlider = tns({
 });
 
 const DOTS = document.getElementsByClassName('pagination-dot-li');
-const VIEWPORT_WIDTH = parseInt(window.innerWidth);
+const VIEWPORT_WIDTH = document.documentElement.clientWidth;
 
 function showDot () {
   for (let i = 0; i < DOTS.length; i++) {
@@ -60,7 +60,9 @@ function showDot () {
   }
 }
 showDot();
-// window.onresize = showDot;
+window.addEventListener('resize', function () {
+  showDot();
+});
 
 //  obsługa klików
 //  funkcja ogólna
