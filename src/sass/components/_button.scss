@@ -36,3 +36,15 @@
     color: #ffffff;
   }
 }
+
+.btn-on-slider {
+  @extend .btn-outline;
+  border: 1px solid $black;
+  color: $black;
+
+  &:hover {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: transparent;
+  }
+}
