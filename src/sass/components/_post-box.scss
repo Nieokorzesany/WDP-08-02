@@ -1,6 +1,13 @@
+.blog-slider {
+  max-height: 560px;
+  .blog-slide {
+    width: 33%;
+  }
+}
+
 .post-box {
   margin-bottom: 2rem;
-  display: block;
+  display: inline-block;
 
   &:hover {
     text-decoration: none;
