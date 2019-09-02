@@ -84,8 +84,18 @@
         @extend .fa-star;
 
         &.full {
+          color: $primary;
           @extend .fas;
         }
+        &:hover ~ a {
+          color: rgb(42, 42, 42);
+          @extend .far;
+          @extend .fa-star;
+        }
+      }
+      &:hover > a {
+        color: $primary;
+        @extend .fas;
       }
     }
   }
@@ -111,6 +121,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .btn-outline.active {
+      border-color: $primary;
+      background: $primary;
+      color: #fff;
+
+      &:hover {
+        border-color: #000;
+        background: #000;
+      }
+    }
     .price {
       display: flex;
       align-items: center;
