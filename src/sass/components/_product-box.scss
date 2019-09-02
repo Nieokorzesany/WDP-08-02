@@ -1,7 +1,12 @@
 .new-furniture-slider {
   max-height: 520px;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  // display: flex;
+  // flex-direction: column;
+  //flex-wrap: nowrap;
+  //width: 100%;
+  .slide {
+    width: 25%;
+  }
 }
 
 .product-box {
