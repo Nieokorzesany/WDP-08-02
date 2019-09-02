@@ -1,3 +1,26 @@
+import { tns } from './../../node_modules/tiny-slider/src/tiny-slider';
+// eslint-disable-next-line no-unused-vars
+const blogSlider = tns({
+  container: '.blog-slider',
+  items: 1,
+  slideBy: 'page',
+  controls: false,
+  mouseDrag: true,
+  swipeAngle: 20,
+  startIndex: 1,
+  navContainer: '.blog-slider-pagination-dots',
+  responsive: {
+    576: {
+      items: 2,
+      gutter: 15
+    },
+    992: {
+      items: 3,
+      gutter: 15
+    }
+  }
+});
+
 const stars = document.getElementsByClassName('stars');
 
 for (let i = 0; i < stars.length; ++i) {
