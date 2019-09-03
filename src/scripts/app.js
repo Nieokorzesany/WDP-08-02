@@ -25,7 +25,8 @@ const stars = document.getElementsByClassName('stars');
 
 for (let i = 0; i < stars.length; ++i) {
   for (let j = 0; j < stars[i].children.length; ++j) {
-    stars[i].children[j].addEventListener('click', function () {
+    stars[i].children[j].addEventListener('click', function (e) {
+      e.preventDefault();
       emptyStar(stars[i].children);
       fillStar(j, stars[i].children);
     });
