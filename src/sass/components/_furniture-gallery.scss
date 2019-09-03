@@ -48,6 +48,7 @@
   border: 1px solid $tab-hover-color;
   border-top: none;
   position: relative;
+  background-color: $tab-hover-color;
 
   img {
     max-width: 100%;
@@ -66,6 +67,8 @@
       margin: 4px 8px;
 
       &:last-of-type {
+        @extend %colortransition;
+
         &:hover + .comment {
           display: block;
         }
@@ -119,6 +122,7 @@
         color: $white;
         text-align: center;
         line-height: 22px;
+        letter-spacing: 1px;
 
         &:first-of-type {
           font-size: 18px;
@@ -152,17 +156,25 @@
         }
 
         .stars {
-          font-size: 14px;
           a {
             text-decoration: none;
-            color: $white;
+            color: rgb(42, 42, 42);
             @extend .far;
             @extend .fa-star;
 
             &.full {
-              color: $black;
+              color: $primary;
               @extend .fas;
             }
+            &:hover ~ a {
+              color: rgb(42, 42, 42);
+              @extend .far;
+              @extend .fa-star;
+            }
+          }
+          &:hover > a {
+            color: $primary;
+            @extend .fas;
           }
         }
       }
@@ -234,7 +246,32 @@
     margin-right: 0;
     margin-left: 0;
     border: 1px solid $tab-hover-color;
+    background: $tab-hover-color;
     height: 607.26px;
+    padding-top: 60px;
+    padding-left: 60px;
+  }
+
+  p {
+    &:first-of-type {
+      color: $on-photo-btn-bg-color;
+      font-size: 42px;
+      font-weight: 600;
+      margin: 0px;
+
+      span {
+        color: $black;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+    }
+
+    &:last-of-type {
+      color: $primary;
+      font-size: 42px;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
   }
 
   img {

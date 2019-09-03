@@ -48,3 +48,15 @@
     background-color: transparent;
   }
 }
+
+.btn-on-photo {
+  text-transform: uppercase;
+  width: 135px;
+  height: 55px;
+  color: $white;
+  border-radius: 5px;
+  border: none;
+  background-color: $on-photo-btn-bg-color;
+  font-size: 14px;
+  font-weight: 500;
+}
