@@ -1,4 +1,4 @@
-import { tns } from './../../node_modules/tiny-slider/src/tiny-slider';
+import { tns } from '../../../node_modules/tiny-slider/src/tiny-slider';
 // eslint-disable-next-line no-unused-vars
 const blogSlider = tns({
   container: '.blog-slider',
