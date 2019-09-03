@@ -113,6 +113,25 @@
       border-radius: 50%;
       margin: 0 auto;
       background-color: $dark-grey;
+
+      span {
+        display: block;
+        color: $white;
+        text-align: center;
+        line-height: 22px;
+
+        &:first-of-type {
+          font-size: 18px;
+          font-weight: 500;
+          padding-top: 34px;
+        }
+
+        &:last-of-type {
+          font-size: 14px;
+          font-weight: 300;
+          text-decoration: line-through;
+        }
+      }
     }
 
     .furniture-namebox {
@@ -120,6 +139,33 @@
       width: 250px;
       margin-top: -10px;
       background-color: $white;
+
+      .content {
+        text-align: center;
+        padding: 25px;
+
+        h5 {
+          color: $black;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 24px;
+        }
+
+        .stars {
+          font-size: 14px;
+          a {
+            text-decoration: none;
+            color: $white;
+            @extend .far;
+            @extend .fa-star;
+
+            &.full {
+              color: $black;
+              @extend .fas;
+            }
+          }
+        }
+      }
     }
 
     &::before {
