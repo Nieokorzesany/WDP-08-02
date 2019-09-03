@@ -29,116 +29,119 @@
   }
 
   .photo {
-    position: relative;
-    background: {
-      color: #f4f5f7;
-      size: contain;
-      position: center;
-      repeat: no-repeat;
-    }
-    overflow: hidden;
-    align-items: flex-end;
-
-    .sale {
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      z-index: 99;
-      transform: translateX(-50%);
-      background-color: #292929;
-      border-radius: 50%;
-      color: #ffffff;
-      padding: 30px 15px 5px 15px;
-    }
-
     .buttons {
       opacity: 0;
       display: flex;
       justify-content: space-between;
     }
+  }
+}
 
-    img {
-      width: 100%;
-      &:hover {
-        opacity: 0.7;
-      }
-    }
+.photo {
+  position: relative;
+  background: {
+    color: #f4f5f7;
+    size: contain;
+    position: center;
+    repeat: no-repeat;
+  }
+  overflow: hidden;
+  align-items: flex-end;
+
+  .sale {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    z-index: 99;
+    transform: translateX(-50%);
+    background-color: #292929;
+    border-radius: 50%;
+    color: #ffffff;
+    padding: 30px 15px 5px 15px;
   }
 
-  .content {
-    text-align: center;
-    padding: 20px;
-
-    h5 {
-      color: $primary;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: 1px;
+  img {
+    width: 100%;
+    &:hover {
+      opacity: 0.7;
     }
+  }
+}
 
-    .stars {
-      a {
-        text-decoration: none;
-        color: rgb(42, 42, 42);
-        @extend .far;
-        @extend .fa-star;
+.content {
+  text-align: center;
+  padding: 20px;
 
-        &.full {
-          color: $primary;
-          @extend .fas;
-        }
-        &:hover ~ a {
-          color: rgb(42, 42, 42);
-          @extend .far;
-          @extend .fa-star;
-        }
-      }
-      &:hover > a {
+  h5 {
+    color: $primary;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+
+  .stars {
+    a {
+      text-decoration: none;
+      color: rgb(42, 42, 42);
+      @extend .far;
+      @extend .fa-star;
+
+      &.full {
         color: $primary;
         @extend .fas;
       }
-    }
-  }
-
-  .line {
-    margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: 50%;
-      width: 30px;
-      border-bottom: 4px solid $primary;
-      transform: translateX(-50%);
-    }
-  }
-
-  .actions {
-    padding: 15px 10px 10px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .btn-outline.active {
-      border-color: $primary;
-      background: $primary;
-      color: #fff;
-
-      &:hover {
-        border-color: #000;
-        background: #000;
+      &:hover ~ a {
+        color: rgb(42, 42, 42);
+        @extend .far;
+        @extend .fa-star;
+        @extend .fas;
       }
     }
-    .price {
-      display: flex;
-      align-items: center;
+    &:hover > a {
+      color: $primary;
+      @extend .fas;
     }
-    .old-price {
-      margin-right: 15px;
-      font-weight: 100;
-      text-decoration: line-through;
+  }
+}
+
+.line {
+  margin: 0 10px;
+  border-bottom: 1px solid #2a2a2a;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 30px;
+    border-bottom: 4px solid $primary;
+    transform: translateX(-50%);
+  }
+}
+
+.actions {
+  padding: 15px 10px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .btn-outline.active {
+    border-color: $primary;
+    background: $primary;
+    color: #fff;
+
+    &:hover {
+      border-color: #000;
+      background: #000;
     }
+  }
+  .price {
+    display: flex;
+    align-items: center;
+  }
+  .old-price {
+    margin-right: 15px;
+    font-weight: 100;
+    text-decoration: line-through;
   }
 }

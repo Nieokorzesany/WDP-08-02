@@ -109,7 +109,7 @@
           }
         }
       }
-
+      
       li.pagination-dot-li {
         display: inline-block;
         @include media-breakpoint-between(sm, md) {
@@ -128,6 +128,21 @@
           }
         }
       }
+      
+      li.blog-pagination-dot-li {
+        display: inline-block;
+        @include media-breakpoint-between(sm, md) {
+          &:not(:nth-child(-n + 3)) {
+            display: none;
+          }
+        }
+        @include media-breakpoint-up(lg) {
+          &:not(:nth-child(-n + 2)) {
+            display: none;
+          }
+        }
+      }
+      
       li.tns-nav-active a {
         background-color: $primary;
       }
