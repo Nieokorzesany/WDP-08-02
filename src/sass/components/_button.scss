@@ -59,4 +59,10 @@
   background-color: $on-photo-btn-bg-color;
   font-size: 14px;
   font-weight: 500;
+  @extend %colortransition;
+
+  &:hover {
+    border: 1px solid $primary;
+    background-color: $primary;
+  }
 }
