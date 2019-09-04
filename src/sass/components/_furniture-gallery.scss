@@ -65,17 +65,14 @@
 
     a {
       margin: 4px 8px;
+      @extend %colortransition;
 
-      &:last-of-type {
-        @extend %colortransition;
-
-        &:hover + .comment {
-          display: block;
-        }
+      &:hover + .furniture-gallery-tooltip {
+        display: block;
       }
     }
 
-    .comment {
+    .furniture-gallery-tooltip {
       display: none;
       position: absolute;
       color: $white;
@@ -85,7 +82,6 @@
       line-height: 26px;
       text-align: center;
       font-size: 12px;
-      top: 80%;
       left: 55px;
 
       &::before {
@@ -99,6 +95,22 @@
         border-width: 5px 5px 5px 0;
         border-color: transparent $black transparent transparent;
       }
+    }
+    .furniture-gallery-tooltip-heart {
+      @extend .furniture-gallery-tooltip;
+      top: 5%;
+    }
+    .furniture-gallery-tooltip-exchange {
+      @extend .furniture-gallery-tooltip;
+      top: 30%;
+    }
+    .furniture-gallery-tooltip-eye {
+      @extend .furniture-gallery-tooltip;
+      top: 55%;
+    }
+    .furniture-gallery-tooltip-basket {
+      @extend .furniture-gallery-tooltip;
+      top: 80%;
     }
   }
 
