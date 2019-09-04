@@ -21,6 +21,25 @@ const blogSlider = tns({
   }
 });
 
+const brandsSlider = tns({
+  container: '.brands-slider .row',
+  items: 6,
+  slideBy: 'page',
+  nav: false,
+  gutter: 15,
+  controls: false,
+  mouseDrag: true,
+  swipeAngle: 20,
+  startIndex: 1
+});
+
+document
+  .querySelector('.brands-slider .btn-prev')
+  .addEventListener('click', () => brandsSlider.goTo('prev'));
+document
+  .querySelector('.brands-slider .btn-next')
+  .addEventListener('click', () => brandsSlider.goTo('next'));
+
 const stars = document.getElementsByClassName('stars');
 
 for (let i = 0; i < stars.length; ++i) {
