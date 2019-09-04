@@ -23,14 +23,25 @@ const blogSlider = tns({
 
 const brandsSlider = tns({
   container: '.brands-slider .row',
-  items: 6,
+  items: 1,
   slideBy: 'page',
   nav: false,
   gutter: 15,
   controls: false,
   mouseDrag: true,
   swipeAngle: 20,
-  startIndex: 1
+  startIndex: 1,
+  responsive: {
+    768: {
+      items: 2
+    },
+    992: {
+      items: 3
+    },
+    1200: {
+      items: 6
+    }
+  }
 });
 
 document
