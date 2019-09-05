@@ -24,6 +24,37 @@ const newFurnitureSlider = tns({
   }
 });
 
+// Section Brand Slider
+const brandsSlider = tns({
+  container: '.brands-slider .row',
+  items: 1,
+  slideBy: 'page',
+  nav: false,
+  gutter: 15,
+  controls: false,
+  mouseDrag: true,
+  swipeAngle: 20,
+  startIndex: 1,
+  responsive: {
+    768: {
+      items: 2
+    },
+    992: {
+      items: 3
+    },
+    1200: {
+      items: 6
+    }
+  }
+});
+
+document
+  .querySelector('.brands-slider .btn-prev')
+  .addEventListener('click', () => brandsSlider.goTo('prev'));
+document
+  .querySelector('.brands-slider .btn-next')
+  .addEventListener('click', () => brandsSlider.goTo('next'));
+
 // Section Blog Slider
 // eslint-disable-next-line no-unused-vars
 const blogSlider = tns({

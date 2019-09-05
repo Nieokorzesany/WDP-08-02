@@ -4,9 +4,6 @@
   .row > * {
     border-bottom: 4px solid #e2e2e2;
   }
-  .w-100 {
-    border: none;
-  }
 
   .heading {
     position: relative;
@@ -109,7 +106,7 @@
           }
         }
       }
-      
+
       li.pagination-dot-li {
         display: inline-block;
         @include media-breakpoint-between(sm, md) {
@@ -128,7 +125,7 @@
           }
         }
       }
-      
+
       li.blog-pagination-dot-li {
         display: inline-block;
         @include media-breakpoint-between(sm, md) {
@@ -142,7 +139,7 @@
           }
         }
       }
-      
+
       li.tns-nav-active a {
         background-color: $primary;
       }
