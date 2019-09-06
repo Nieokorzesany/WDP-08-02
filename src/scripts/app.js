@@ -114,15 +114,15 @@ const gallerySliderFeatured = tns({
 });
 
 // eslint-disable-next-line no-unused-vars
-const gallerySliderFeaturedThumbnails = tns({
-  container: '#featured-control-thumbnails',
-  items: 6,
-  slideBy: 'page',
-  prevButton: '.control-arrow-prev',
-  nextButton: '.control-arrow-next',
-  nav: false
-  // navContainer: '.controls-thumbnails',
-  // navAsThumbnails: true,
-  // mouseDrag: true,
-  // swipeAngle: 20
-});
+// const gallerySliderFeaturedThumbnails = tns({
+//   container: '#featured-control-thumbnails',
+//   items: 6,
+//   slideBy: 'page',
+//   prevButton: '.control-arrow-prev',
+//   nextButton: '.control-arrow-next',
+//   nav: false
+//   // navContainer: '.controls-thumbnails',
+//   // navAsThumbnails: true,
+//   // mouseDrag: true,
+//   // swipeAngle: 20
+// });

@@ -247,10 +247,25 @@
     }
   }
 
-  .control-image {
-    background: $dark-grey;
+  .controls-thumbnails {
+    display: inline-block;
+    width: 460px;
+    max-width: 460px;
     height: 70px;
-    width: 70px;
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    list-style: none;
+    .control-image {
+      margin-left: 3px;
+      display: inline-block;
+      overflow: hidden;
+      img {
+        height: 70px;
+        width: 70px;
+      }
+    }
   }
 }
 
