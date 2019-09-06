@@ -128,6 +128,7 @@
       border-radius: 50%;
       margin: 0 auto;
       background-color: $dark-grey;
+      opacity: 0.98;
 
       span {
         display: block;
@@ -255,17 +256,25 @@
 
 .column-foto {
   .furniture-gallery-image {
+    overflow: hidden;
+    position: relative;
     margin-right: 0;
     margin-left: 0;
     border: 1px solid $tab-hover-color;
     background: $tab-hover-color;
     height: 607.26px;
-    padding-top: 60px;
-    padding-left: 60px;
+
+    img {
+      max-width: 100%;
+      max-height: auto;
+    }
   }
 
   p {
+    position: absolute;
     &:first-of-type {
+      top: 60px;
+      left: 60px;
       color: $on-photo-btn-bg-color;
       font-size: 42px;
       font-weight: 600;
@@ -279,15 +288,17 @@
     }
 
     &:last-of-type {
+      top: 120px;
+      left: 60px;
       color: $primary;
       font-size: 42px;
       font-weight: 600;
       text-transform: capitalize;
     }
   }
-
-  img {
-    max-width: 100%;
-    max-height: 536px;
+  button {
+    position: absolute;
+    top: 210px;
+    left: 60px;
   }
 }
