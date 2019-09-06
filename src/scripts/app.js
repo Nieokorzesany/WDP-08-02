@@ -102,3 +102,27 @@ function emptyStar (list) {
     list[i].classList.remove('full');
   }
 }
+
+// eslint-disable-next-line no-unused-vars
+const gallerySliderFeatured = tns({
+  container: '#slider-featured',
+  items: 1,
+  controls: false,
+  nav: false,
+  mouseDrag: true,
+  swipeAngle: 20
+});
+
+// eslint-disable-next-line no-unused-vars
+const gallerySliderFeaturedThumbnails = tns({
+  container: '#featured-control-thumbnails',
+  items: 6,
+  slideBy: 'page',
+  prevButton: '.control-arrow-prev',
+  nextButton: '.control-arrow-next',
+  nav: false
+  // navContainer: '.controls-thumbnails',
+  // navAsThumbnails: true,
+  // mouseDrag: true,
+  // swipeAngle: 20
+});
