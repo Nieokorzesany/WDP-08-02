@@ -7,6 +7,9 @@
 
   .heading {
     position: relative;
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
 
     h3 {
       color: $primary;
@@ -44,6 +47,9 @@
           text-decoration: none;
           font-size: 18px;
           display: block;
+          @include media-breakpoint-down(md) {
+            font-size: 14px;
+          }
 
           &::before {
             content: "";
@@ -53,6 +59,9 @@
             width: 100%;
             border-bottom: 4px solid #e1e1e1;
             @extend %colortransition;
+            @include media-breakpoint-down(md) {
+              bottom: -5px;
+            }
           }
           &.active,
           &:hover {
@@ -66,12 +75,19 @@
   }
 
   .dots {
+    @include media-breakpoint-down(md) {
+      margin: 0 auto;
+    }
+
     ul {
       margin: 0;
       padding: 0 0 0 1rem;
       list-style: none;
       background-color: #ffffff;
       transform: translateY(15px);
+      @include media-breakpoint-down(md) {
+        padding: 0;
+      }
 
       li {
         display: inline-block;
@@ -91,6 +107,26 @@
           }
         }
       }
+
+      li.pagination-dot-li {
+        display: inline-block;
+        @include media-breakpoint-between(sm, md) {
+          &:not(:nth-child(-n + 4)) {
+            display: none;
+          }
+        }
+        @include media-breakpoint-only(lg) {
+          &:not(:nth-child(-n + 3)) {
+            display: none;
+          }
+        }
+        @include media-breakpoint-only(xl) {
+          &:not(:nth-child(-n + 2)) {
+            display: none;
+          }
+        }
+      }
+
       li.blog-pagination-dot-li {
         display: inline-block;
         @include media-breakpoint-between(sm, md) {
@@ -104,6 +140,7 @@
           }
         }
       }
+
       li.tns-nav-active a {
         background-color: $primary;
       }

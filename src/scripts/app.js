@@ -1,26 +1,30 @@
 import { tns } from './../../node_modules/tiny-slider/src/tiny-slider';
+
+// Section New Furniture Slider
 // eslint-disable-next-line no-unused-vars
-const blogSlider = tns({
-  container: '.blog-slider',
+const newFurnitureSlider = tns({
+  container: '.new-furniture-slider',
   items: 1,
   slideBy: 'page',
   controls: false,
   mouseDrag: true,
   swipeAngle: 20,
   startIndex: 1,
-  navContainer: '.blog-slider-pagination-dots',
+  navContainer: '.slider-pagination-dots',
   responsive: {
     576: {
-      items: 2,
-      gutter: 15
+      items: 2
     },
     992: {
-      items: 3,
-      gutter: 15
+      items: 3
+    },
+    1200: {
+      items: 4
     }
   }
 });
 
+// Section Brand Slider
 const brandsSlider = tns({
   container: '.brands-slider .row',
   items: 1,
@@ -51,6 +55,30 @@ document
   .querySelector('.brands-slider .btn-next')
   .addEventListener('click', () => brandsSlider.goTo('next'));
 
+// Section Blog Slider
+// eslint-disable-next-line no-unused-vars
+const blogSlider = tns({
+  container: '.blog-slider',
+  items: 1,
+  slideBy: 'page',
+  controls: false,
+  mouseDrag: true,
+  swipeAngle: 20,
+  startIndex: 1,
+  navContainer: '.blog-slider-pagination-dots',
+  responsive: {
+    576: {
+      items: 2,
+      gutter: 15
+    },
+    992: {
+      items: 3,
+      gutter: 15
+    }
+  }
+});
+
+// Stars on the photos
 const stars = document.getElementsByClassName('stars');
 
 for (let i = 0; i < stars.length; ++i) {
