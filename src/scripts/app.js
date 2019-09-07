@@ -103,7 +103,7 @@ function emptyStar (list) {
   }
 }
 
-// Featured Gallery Slider
+// Furniture Gallery Sliders
 const gallerySliderFeatured = tns({
   container: '#slider-featured',
   mode: 'gallery',
@@ -113,7 +113,6 @@ const gallerySliderFeatured = tns({
   nav: false
 });
 
-// eslint-disable-next-line no-unused-vars
 const gallerySliderTopseller = tns({
   container: '#slider-topseller',
   mode: 'gallery',
@@ -123,7 +122,6 @@ const gallerySliderTopseller = tns({
   nav: false
 });
 
-// eslint-disable-next-line no-unused-vars
 const gallerySliderSaleoff = tns({
   container: '#slider-saleoff',
   mode: 'gallery',
@@ -133,7 +131,6 @@ const gallerySliderSaleoff = tns({
   nav: false
 });
 
-// eslint-disable-next-line no-unused-vars
 const gallerySliderToprated = tns({
   container: '#slider-toprated',
   mode: 'gallery',
@@ -144,61 +141,55 @@ const gallerySliderToprated = tns({
 });
 
 const thumbnails = document.getElementsByClassName('controls-thumbnails');
-console.log(thumbnails[0].id);
+console.log(thumbnails[0].children.length);
+const sliders = [
+  gallerySliderFeatured,
+  gallerySliderTopseller,
+  gallerySliderSaleoff,
+  gallerySliderToprated
+];
 
-const thumbnailsArray = [];
 for (let i = 0; i < thumbnails.length; i++) {
-  thumbnailsArray.push("'#" + thumbnails[i].id + " > li'");
-}
-console.log(thumbnailsArray.length);
-console.log(thumbnailsArray[0]);
-
-// for (let j = 0; j < thumbnailsArray.length; j++) {
-//   for (let i = 0; i < thumbnailsArray[i].children.length; i++) {
-//     thumbnailsArray[i].children.addEventListener('click', function (e) {
-//       e.preventDefault();
-//       slideOverlay();
-//       gallerySliderFeatured.goTo(i);
-//       e.target.parentElement.classList.remove('overlay');
-//     });
-//   }
-// }
-
-const featuredThumbnails = document.querySelectorAll(
-  '#featured-controls-thumbnails > li'
-);
-// przewijam slajdy kliknięciem w miniaturki i toglujemy overlaya
-for (let i = 0; i < featuredThumbnails.length; i++) {
-  featuredThumbnails[i].addEventListener('click', function (e) {
-    e.preventDefault();
-    slideOverlay();
-    gallerySliderFeatured.goTo(i);
-    e.target.parentElement.classList.remove('overlay');
-  });
+  // wybieram każdy slider po kolei
+  for (let j = 0; j < thumbnails[i].children.length; j++) {
+    thumbnails[i].children[j].addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log(thumbnails[i].children[j]);
+      for (let j = 0; j < thumbnails[i].children.length; j++) {
+        thumbnails[i].children[j].classList.add('overlay');
+      }
+      sliders[i].goTo(j);
+      e.target.parentElement.classList.remove('overlay');
+    });
+  }
 }
 
 // obsługa strzałek
-const featuredControlArrows = document.getElementsByClassName('featured-control-arrow');
-for (let i = 0; i < featuredControlArrows.length; i++) {
-  featuredControlArrows[i].addEventListener('click', function (e) {
+const controlArrows = document.getElementsByClassName('control-arrow');
+for (let i = 0; i < controlArrows.length; i++) {
+  controlArrows[i].addEventListener('click', function (e) {
     e.preventDefault();
-    slideThumbnails();
+    if (i < 2) {
+      for (let j = 0; j < thumbnails[0].children.length; j++) {
+        thumbnails[0].children[j].classList.toggle('hide');
+      }
+    } else if (i >= 2 && i < 4) {
+      for (let j = 0; j < thumbnails[1].children.length; j++) {
+        thumbnails[1].children[j].classList.toggle('hide');
+      }
+    } else if (i >= 4 && i < 6) {
+      for (let j = 0; j < thumbnails[2].children.length; j++) {
+        thumbnails[2].children[j].classList.toggle('hide');
+      }
+    } else if (i >= 6 && i < 8) {
+      for (let j = 0; j < thumbnails[3].children.length; j++) {
+        thumbnails[3].children[j].classList.toggle('hide');
+      }
+    }
   });
 }
 
-// ogarnąc to z name jako argumentem
-function slideThumbnails (name) {
-  for (let i = 0; i < featuredThumbnails.length; i++) {
-    featuredThumbnails[i].classList.toggle('hide');
-  }
-}
-
-function slideOverlay (name) {
-  for (let i = 0; i < featuredThumbnails.length; i++) {
-    featuredThumbnails[i].classList.add('overlay');
-  }
-}
-
+// obsługa tabów kategorii
 const productCategories = document.getElementsByClassName('product-category-name');
 const furnitureGallerySliders = document.getElementsByClassName(
   'furniture-gallery-slider'
@@ -209,18 +200,27 @@ const furnitureGalleryControls = document.getElementsByClassName(
 for (let i = 0; i < productCategories.length; i++) {
   productCategories[i].addEventListener('click', function (e) {
     e.preventDefault();
-    showFurnitureSlider();
-    showFurnitureGalleryControls();
+    showFurnitureSlider(i);
+    showFurnitureGalleryControls(i);
+    productCategoryActive();
+    e.target.classList.add('active');
   });
 }
 
-function showFurnitureSlider () {
+function showFurnitureSlider (x) {
   for (let i = 0; i < furnitureGallerySliders.length; i++) {
-    furnitureGallerySliders[i].classList.toggle('hide');
+    furnitureGallerySliders[i].classList.add('hide');
   }
+  furnitureGallerySliders[x].classList.remove('hide');
 }
-function showFurnitureGalleryControls () {
+function showFurnitureGalleryControls (x) {
   for (let i = 0; i < furnitureGalleryControls.length; i++) {
-    furnitureGalleryControls[i].classList.toggle('hide');
+    furnitureGalleryControls[i].classList.add('hide');
+  }
+  furnitureGalleryControls[x].classList.remove('hide');
+}
+function productCategoryActive () {
+  for (let i = 0; i < productCategories.length; i++) {
+    productCategories[i].classList.remove('active');
   }
 }

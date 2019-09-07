@@ -43,6 +43,19 @@
       }
     }
   }
+  .product-category-name.active {
+    background-color: $tab-hover-color;
+    color: $primary;
+    top: -1px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: -1px;
+      width: calc(100% + 2px);
+      border-top: 4px solid $primary;
+    }
+  }
 }
 
 .furniture-gallery-slider {
