@@ -64,6 +64,7 @@
   border: none;
   position: relative;
   overflow: hidden;
+  transition: opacity 1s linear;
 
   img {
     max-height: 410px;
@@ -239,10 +240,15 @@
   display: none;
 }
 
+.furniture-gallery-slider.visuallyhide {
+  opacity: 0;
+}
+
 .furniture-gallery-controls {
   position: relative;
   height: 86px;
   border: 1px solid $tab-hover-color;
+  transition: opacity 1s linear;
 
   .control-arrow {
     position: absolute;
@@ -309,6 +315,10 @@
 
 .furniture-gallery-controls.hide {
   display: none;
+}
+
+.furniture-gallery-controls.visuallyhide {
+  opacity: 0;
 }
 
 .column-foto {

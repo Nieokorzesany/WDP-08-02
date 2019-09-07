@@ -104,57 +104,51 @@ function emptyStar (list) {
 }
 
 // Furniture Gallery Sliders
-const gallerySliderFeatured = tns({
-  container: '#slider-featured',
+const sliderFeatured = { container: '#slider-featured' };
+const sliderTopseller = { container: '#slider-topseller' };
+const sliderSaleoff = { container: '#slider-saleoff' };
+const sliderToprated = { container: '#slider-toprated' };
+
+const furnitureGallerySlidersParams = {
   mode: 'gallery',
-  speed: 800,
+  speed: 1000,
   items: 1,
   controls: false,
   nav: false
+};
+
+const gallerySliderFeatured = tns({
+  ...sliderFeatured,
+  ...furnitureGallerySlidersParams
 });
 
 const gallerySliderTopseller = tns({
-  container: '#slider-topseller',
-  mode: 'gallery',
-  speed: 800,
-  items: 1,
-  controls: false,
-  nav: false
+  ...sliderTopseller,
+  ...furnitureGallerySlidersParams
 });
 
 const gallerySliderSaleoff = tns({
-  container: '#slider-saleoff',
-  mode: 'gallery',
-  speed: 800,
-  items: 1,
-  controls: false,
-  nav: false
+  ...sliderSaleoff,
+  ...furnitureGallerySlidersParams
 });
 
 const gallerySliderToprated = tns({
-  container: '#slider-toprated',
-  mode: 'gallery',
-  speed: 800,
-  items: 1,
-  controls: false,
-  nav: false
+  ...sliderToprated,
+  ...furnitureGallerySlidersParams
 });
 
 const thumbnails = document.getElementsByClassName('controls-thumbnails');
-console.log(thumbnails[0].children.length);
 const sliders = [
   gallerySliderFeatured,
   gallerySliderTopseller,
   gallerySliderSaleoff,
   gallerySliderToprated
 ];
-
+// obsługa overlaya na thumbailach
 for (let i = 0; i < thumbnails.length; i++) {
-  // wybieram każdy slider po kolei
   for (let j = 0; j < thumbnails[i].children.length; j++) {
     thumbnails[i].children[j].addEventListener('click', function (e) {
       e.preventDefault();
-      console.log(thumbnails[i].children[j]);
       for (let j = 0; j < thumbnails[i].children.length; j++) {
         thumbnails[i].children[j].classList.add('overlay');
       }
@@ -200,25 +194,33 @@ const furnitureGalleryControls = document.getElementsByClassName(
 for (let i = 0; i < productCategories.length; i++) {
   productCategories[i].addEventListener('click', function (e) {
     e.preventDefault();
-    showFurnitureSlider(i);
-    showFurnitureGalleryControls(i);
+    showFurnitureSliderAndControls(i);
     productCategoryActive();
     e.target.classList.add('active');
   });
 }
 
-function showFurnitureSlider (x) {
+function showFurnitureSliderAndControls (x) {
   for (let i = 0; i < furnitureGallerySliders.length; i++) {
-    furnitureGallerySliders[i].classList.add('hide');
+    furnitureGallerySliders[i].classList.add('hide', 'visuallyhide');
   }
-  furnitureGallerySliders[x].classList.remove('hide');
-}
-function showFurnitureGalleryControls (x) {
+  if (furnitureGallerySliders[x].classList.contains('hide')) {
+    furnitureGallerySliders[x].classList.remove('hide');
+    setTimeout(function () {
+      furnitureGallerySliders[x].classList.remove('visuallyhide');
+    }, 20);
+  }
   for (let i = 0; i < furnitureGalleryControls.length; i++) {
-    furnitureGalleryControls[i].classList.add('hide');
+    furnitureGalleryControls[i].classList.add('hide', 'visuallyhide');
   }
-  furnitureGalleryControls[x].classList.remove('hide');
+  if (furnitureGalleryControls[x].classList.contains('hide')) {
+    furnitureGalleryControls[x].classList.remove('hide');
+    setTimeout(function () {
+      furnitureGalleryControls[x].classList.remove('visuallyhide');
+    }, 20);
+  }
 }
+
 function productCategoryActive () {
   for (let i = 0; i < productCategories.length; i++) {
     productCategories[i].classList.remove('active');
