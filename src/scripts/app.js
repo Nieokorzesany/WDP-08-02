@@ -13,13 +13,16 @@ const newFurnitureSlider = tns({
   navContainer: '.slider-pagination-dots',
   responsive: {
     576: {
-      items: 2
+      items: 2,
+      gutter: 15
     },
     992: {
-      items: 3
+      items: 3,
+      gutter: 15
     },
     1200: {
-      items: 4
+      items: 4,
+      gutter: 15
     }
   }
 });
