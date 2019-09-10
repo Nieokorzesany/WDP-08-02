@@ -40,6 +40,9 @@
         display: inline-block;
         margin: 0 0.5rem;
         font-weight: 600;
+        @include media-breakpoint-down(sm) {
+          margin: 0 0.25rem;
+        }
 
         a {
           color: rgb(42, 42, 42);
@@ -48,7 +51,10 @@
           font-size: 18px;
           display: block;
           @include media-breakpoint-down(md) {
-            font-size: 14px;
+            font-size: 16px;
+          }
+          @include media-breakpoint-down(sm) {
+            font-size: 15px;
           }
 
           &::before {
@@ -59,7 +65,7 @@
             width: 100%;
             border-bottom: 4px solid #e1e1e1;
             @extend %colortransition;
-            @include media-breakpoint-down(md) {
+            @include media-breakpoint-down(sm) {
               bottom: -5px;
             }
           }
