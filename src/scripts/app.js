@@ -102,3 +102,127 @@ function emptyStar (list) {
     list[i].classList.remove('full');
   }
 }
+
+// Furniture Gallery Sliders
+const sliderFeatured = { container: '#slider-featured' };
+const sliderTopseller = { container: '#slider-topseller' };
+const sliderSaleoff = { container: '#slider-saleoff' };
+const sliderToprated = { container: '#slider-toprated' };
+
+const furnitureGallerySlidersParams = {
+  mode: 'gallery',
+  speed: 1000,
+  items: 1,
+  controls: false,
+  nav: false
+};
+
+const gallerySliderFeatured = tns({
+  ...sliderFeatured,
+  ...furnitureGallerySlidersParams
+});
+
+const gallerySliderTopseller = tns({
+  ...sliderTopseller,
+  ...furnitureGallerySlidersParams
+});
+
+const gallerySliderSaleoff = tns({
+  ...sliderSaleoff,
+  ...furnitureGallerySlidersParams
+});
+
+const gallerySliderToprated = tns({
+  ...sliderToprated,
+  ...furnitureGallerySlidersParams
+});
+
+const thumbnails = document.getElementsByClassName('controls-thumbnails');
+const sliders = [
+  gallerySliderFeatured,
+  gallerySliderTopseller,
+  gallerySliderSaleoff,
+  gallerySliderToprated
+];
+// obsługa overlaya na thumbailach
+for (let i = 0; i < thumbnails.length; i++) {
+  for (let j = 0; j < thumbnails[i].children.length; j++) {
+    thumbnails[i].children[j].addEventListener('click', function (e) {
+      e.preventDefault();
+      for (let j = 0; j < thumbnails[i].children.length; j++) {
+        thumbnails[i].children[j].classList.add('overlay');
+      }
+      sliders[i].goTo(j);
+      e.target.parentElement.classList.remove('overlay');
+    });
+  }
+}
+
+// obsługa strzałek
+const controlArrows = document.getElementsByClassName('control-arrow');
+for (let i = 0; i < controlArrows.length; i++) {
+  controlArrows[i].addEventListener('click', function (e) {
+    e.preventDefault();
+    if (i < 2) {
+      for (let j = 0; j < thumbnails[0].children.length; j++) {
+        thumbnails[0].children[j].classList.toggle('hide');
+      }
+    } else if (i >= 2 && i < 4) {
+      for (let j = 0; j < thumbnails[1].children.length; j++) {
+        thumbnails[1].children[j].classList.toggle('hide');
+      }
+    } else if (i >= 4 && i < 6) {
+      for (let j = 0; j < thumbnails[2].children.length; j++) {
+        thumbnails[2].children[j].classList.toggle('hide');
+      }
+    } else if (i >= 6 && i < 8) {
+      for (let j = 0; j < thumbnails[3].children.length; j++) {
+        thumbnails[3].children[j].classList.toggle('hide');
+      }
+    }
+  });
+}
+
+// obsługa tabów kategorii
+const productCategories = document.getElementsByClassName('product-category-name');
+const furnitureGallerySliders = document.getElementsByClassName(
+  'furniture-gallery-slider'
+);
+const furnitureGalleryControls = document.getElementsByClassName(
+  'furniture-gallery-controls'
+);
+for (let i = 0; i < productCategories.length; i++) {
+  productCategories[i].addEventListener('click', function (e) {
+    e.preventDefault();
+    showFurnitureSliderAndControls(i);
+    productCategoryActive();
+    e.target.classList.add('active');
+  });
+}
+
+function showFurnitureSliderAndControls (x) {
+  for (let i = 0; i < furnitureGallerySliders.length; i++) {
+    furnitureGallerySliders[i].classList.add('hide', 'visuallyhide');
+  }
+  if (furnitureGallerySliders[x].classList.contains('hide')) {
+    furnitureGallerySliders[x].classList.remove('hide');
+    setTimeout(function () {
+      furnitureGallerySliders[x].classList.remove('visuallyhide');
+    }, 20);
+  }
+  for (let i = 0; i < furnitureGalleryControls.length; i++) {
+    furnitureGalleryControls[i].classList.add('hide', 'visuallyhide');
+  }
+  if (furnitureGalleryControls[x].classList.contains('hide')) {
+    furnitureGalleryControls[x].classList.remove('hide');
+    setTimeout(function () {
+      furnitureGalleryControls[x].classList.remove('visuallyhide');
+    }, 20);
+  }
+}
+
+function productCategoryActive () {
+  for (let i = 0; i < productCategories.length; i++) {
+    productCategories[i].classList.remove('active');
+  }
+}

@@ -13,6 +13,7 @@
   margin-right: 0;
   margin-left: 0;
   border: 1px solid $tab-hover-color;
+  cursor: pointer;
   .product-category-name {
     position: relative;
     &:not(:last-child) {
@@ -42,17 +43,32 @@
       }
     }
   }
+  .product-category-name.active {
+    background-color: $tab-hover-color;
+    color: $primary;
+    top: -1px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: -1px;
+      width: calc(100% + 2px);
+      border-top: 4px solid $primary;
+    }
+  }
 }
 
 .furniture-gallery-slider {
   height: 410px;
   border: 1px solid $tab-hover-color;
-  border-top: none;
+  border: none;
   position: relative;
+  overflow: hidden;
+  transition: opacity 1s linear;
 
   img {
-    max-width: 100%;
     max-height: 410px;
+    cursor: pointer;
   }
 
   .furniture-gallery-slide-icons {
@@ -118,7 +134,7 @@
     position: absolute;
     width: 250px;
     height: 200px;
-    right: 0;
+    margin-left: 290px;
     top: 43%;
 
     .price-circle {
@@ -128,6 +144,7 @@
       border-radius: 50%;
       margin: 0 auto;
       background-color: $dark-grey;
+      opacity: 0.97;
 
       span {
         display: block;
@@ -219,15 +236,22 @@
   }
 }
 
+.furniture-gallery-slider.hide {
+  display: none;
+}
+
+.furniture-gallery-slider.visuallyhide {
+  opacity: 0;
+}
+
 .furniture-gallery-controls {
+  position: relative;
   height: 86px;
   border: 1px solid $tab-hover-color;
-  border-top: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  transition: opacity 1s linear;
 
   .control-arrow {
+    position: absolute;
     background: $black;
     height: 70px;
     width: 30px;
@@ -245,27 +269,79 @@
       }
     }
   }
-
-  .control-image {
-    background: $dark-grey;
-    height: 70px;
-    width: 70px;
+  .control-arrow.control-arrow-prev {
+    left: 5px;
+    top: 8px;
   }
+  .control-arrow.control-arrow-next {
+    right: 5px;
+    top: 8px;
+  }
+
+  .controls-thumbnails {
+    position: absolute;
+    left: 39px;
+    display: inline-block;
+    width: 460px;
+    max-width: 460px;
+    height: 70px;
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    list-style: none;
+
+    .control-image {
+      margin-left: 3px;
+      display: inline-block;
+      overflow: hidden;
+      img {
+        height: 70px;
+        width: 70px;
+      }
+    }
+
+    .control-image.overlay {
+      background-color: white;
+      img {
+        opacity: 0.5;
+      }
+    }
+    .control-image.hide {
+      display: none;
+    }
+  }
+}
+
+.furniture-gallery-controls.hide {
+  display: none;
+}
+
+.furniture-gallery-controls.visuallyhide {
+  opacity: 0;
 }
 
 .column-foto {
   .furniture-gallery-image {
+    overflow: hidden;
+    position: relative;
     margin-right: 0;
     margin-left: 0;
     border: 1px solid $tab-hover-color;
     background: $tab-hover-color;
     height: 607.26px;
-    padding-top: 60px;
-    padding-left: 60px;
+
+    img {
+      max-width: 100%;
+      max-height: auto;
+    }
   }
 
   p {
+    position: absolute;
     &:first-of-type {
+      top: 60px;
+      left: 60px;
       color: $on-photo-btn-bg-color;
       font-size: 42px;
       font-weight: 600;
@@ -279,15 +355,17 @@
     }
 
     &:last-of-type {
+      top: 120px;
+      left: 60px;
       color: $primary;
       font-size: 42px;
       font-weight: 600;
       text-transform: capitalize;
     }
   }
-
-  img {
-    max-width: 100%;
-    max-height: 536px;
+  button {
+    position: absolute;
+    top: 210px;
+    left: 60px;
   }
 }
