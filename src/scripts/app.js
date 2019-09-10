@@ -117,7 +117,8 @@ const furnitureGallerySlidersParams = {
   speed: 1000,
   items: 1,
   controls: false,
-  nav: false
+  nav: false,
+  mouseDrag: true
 };
 
 const gallerySliderFeatured = tns({

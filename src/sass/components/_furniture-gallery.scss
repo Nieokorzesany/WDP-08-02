@@ -14,11 +14,24 @@
   margin-left: 0;
   border: 1px solid $tab-hover-color;
   cursor: pointer;
+
   .product-category-name {
     position: relative;
+    padding: 0 3px;
+    font-size: 12px;
+    @include media-breakpoint-up(lg) {
+      padding: 0 5px;
+      font-size: 14px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding: 0 15px;
+      font-size: 16px;
+    }
+
     &:not(:last-child) {
       border-right: 1px solid $tab-hover-color;
     }
+
     @extend %colortransition;
 
     &:hover {
@@ -134,7 +147,7 @@
     position: absolute;
     width: 250px;
     height: 200px;
-    margin-left: 290px;
+    right: 0;
     top: 43%;
 
     .price-circle {
