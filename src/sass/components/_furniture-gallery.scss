@@ -14,11 +14,24 @@
   margin-left: 0;
   border: 1px solid $tab-hover-color;
   cursor: pointer;
+
   .product-category-name {
     position: relative;
+    padding: 0 3px;
+    font-size: 12px;
+    @include media-breakpoint-up(lg) {
+      padding: 0 5px;
+      font-size: 14px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding: 0 15px;
+      font-size: 16px;
+    }
+
     &:not(:last-child) {
       border-right: 1px solid $tab-hover-color;
     }
+
     @extend %colortransition;
 
     &:hover {
@@ -134,7 +147,7 @@
     position: absolute;
     width: 250px;
     height: 200px;
-    margin-left: 290px;
+    right: 0;
     top: 43%;
 
     .price-circle {
@@ -270,6 +283,7 @@
     }
   }
   .control-arrow.control-arrow-prev {
+    z-index: 100;
     left: 5px;
     top: 8px;
   }
@@ -279,26 +293,28 @@
   }
 
   .controls-thumbnails {
-    position: absolute;
-    left: 39px;
-    display: inline-block;
-    width: 460px;
-    max-width: 460px;
-    height: 70px;
-    padding: 0;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    overflow: hidden;
-    list-style: none;
+    position: relative;
+    padding: 0 40px;
 
-    .control-image {
-      margin-left: 3px;
-      display: inline-block;
-      overflow: hidden;
+    .tns-carousel {
+      margin: 0 auto;
+    }
+
+    .control-image.tns-item {
+      margin-top: 8px;
       img {
         height: 70px;
-        width: 70px;
+        min-width: 65px;
+        max-width: 100%;
       }
+    }
+
+    .toprated-controls-thumbnails-row,
+    .saleoff-controls-thumbnails-row,
+    .topseller-controls-thumbnails-row,
+    .featured-controls-thumbnails-row {
+      overflow: hidden;
+      flex-wrap: nowrap;
     }
 
     .control-image.overlay {

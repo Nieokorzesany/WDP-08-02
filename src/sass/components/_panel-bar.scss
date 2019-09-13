@@ -45,22 +45,25 @@
           color: rgb(42, 42, 42);
           position: relative;
           text-decoration: none;
-          font-size: 18px;
+          font-size: 14px;
           display: block;
-          @include media-breakpoint-down(md) {
-            font-size: 14px;
+          @include media-breakpoint-up(sm) {
+            font-size: 15px;
+          }
+          @include media-breakpoint-up(lg) {
+            font-size: 18px;
           }
 
           &::before {
             content: "";
             position: absolute;
-            bottom: -4px;
+            bottom: -5px;
             left: 0;
             width: 100%;
             border-bottom: 4px solid #e1e1e1;
             @extend %colortransition;
-            @include media-breakpoint-down(md) {
-              bottom: -5px;
+            @include media-breakpoint-up(lg) {
+              bottom: -4px;
             }
           }
           &.active,

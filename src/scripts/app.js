@@ -114,7 +114,8 @@ const furnitureGallerySlidersParams = {
   speed: 1000,
   items: 1,
   controls: false,
-  nav: false
+  nav: false,
+  mouseDrag: true
 };
 
 const gallerySliderFeatured = tns({
@@ -137,7 +138,7 @@ const gallerySliderToprated = tns({
   ...furnitureGallerySlidersParams
 });
 
-const thumbnails = document.getElementsByClassName('controls-thumbnails');
+const thumbnails = document.getElementsByClassName('thumbail-slider-controls');
 const sliders = [
   gallerySliderFeatured,
   gallerySliderTopseller,
@@ -158,31 +159,6 @@ for (let i = 0; i < thumbnails.length; i++) {
   }
 }
 
-// obsługa strzałek
-const controlArrows = document.getElementsByClassName('control-arrow');
-for (let i = 0; i < controlArrows.length; i++) {
-  controlArrows[i].addEventListener('click', function (e) {
-    e.preventDefault();
-    if (i < 2) {
-      for (let j = 0; j < thumbnails[0].children.length; j++) {
-        thumbnails[0].children[j].classList.toggle('hide');
-      }
-    } else if (i >= 2 && i < 4) {
-      for (let j = 0; j < thumbnails[1].children.length; j++) {
-        thumbnails[1].children[j].classList.toggle('hide');
-      }
-    } else if (i >= 4 && i < 6) {
-      for (let j = 0; j < thumbnails[2].children.length; j++) {
-        thumbnails[2].children[j].classList.toggle('hide');
-      }
-    } else if (i >= 6 && i < 8) {
-      for (let j = 0; j < thumbnails[3].children.length; j++) {
-        thumbnails[3].children[j].classList.toggle('hide');
-      }
-    }
-  });
-}
-
 // obsługa tabów kategorii
 const productCategories = document.getElementsByClassName('product-category-name');
 const furnitureGallerySliders = document.getElementsByClassName(
@@ -191,6 +167,7 @@ const furnitureGallerySliders = document.getElementsByClassName(
 const furnitureGalleryControls = document.getElementsByClassName(
   'furniture-gallery-controls'
 );
+
 for (let i = 0; i < productCategories.length; i++) {
   productCategories[i].addEventListener('click', function (e) {
     e.preventDefault();
@@ -225,4 +202,84 @@ function productCategoryActive () {
   for (let i = 0; i < productCategories.length; i++) {
     productCategories[i].classList.remove('active');
   }
+}
+
+// thumbnails sliders
+const featuredThumbnails = {
+  container: '.controls-thumbnails .featured-controls-thumbnails-row'
+};
+const topSellerThumbnails = {
+  container: '.controls-thumbnails .topseller-controls-thumbnails-row'
+};
+const saleOffThumbnails = {
+  container: '.controls-thumbnails .saleoff-controls-thumbnails-row'
+};
+const topRatedThumbnails = {
+  container: '.controls-thumbnails .toprated-controls-thumbnails-row'
+};
+
+const furnitureGalleryThumbnailsSliderParams = {
+  items: 3,
+  slideBy: 'page',
+  nav: false,
+  loop: false,
+  gutter: 8,
+  controls: false,
+  mouseDrag: true,
+  swipeAngle: 20,
+  responsive: {
+    768: {
+      items: 3
+    },
+    992: {
+      items: 4
+    },
+    1200: {
+      items: 6
+    }
+  }
+};
+
+const featuredThumbnailsSlider = tns({
+  ...featuredThumbnails,
+  ...furnitureGalleryThumbnailsSliderParams
+});
+
+const topSellerThumbnailsSlider = tns({
+  ...topSellerThumbnails,
+  ...furnitureGalleryThumbnailsSliderParams
+});
+
+const saleOffThumbnailsSlider = tns({
+  ...saleOffThumbnails,
+  ...furnitureGalleryThumbnailsSliderParams
+});
+
+const topRatedThumbnailsSlider = tns({
+  ...topRatedThumbnails,
+  ...furnitureGalleryThumbnailsSliderParams
+});
+
+// obsługa strzałek
+const thumbnailsControlArrows = document.getElementsByClassName('control-arrow');
+const thumbnailsSliders = [
+  featuredThumbnailsSlider,
+  topSellerThumbnailsSlider,
+  saleOffThumbnailsSlider,
+  topRatedThumbnailsSlider
+];
+
+for (let i = 0; i < thumbnailsControlArrows.length; i++) {
+  thumbnailsControlArrows[i].addEventListener('click', function (e) {
+    e.preventDefault();
+    if (i % 2 === 0) {
+      for (let j = 0; j < thumbnailsSliders.length; j++) {
+        thumbnailsSliders[j].goTo('prev');
+      }
+    } else {
+      for (let j = 0; j < thumbnailsSliders.length; j++) {
+        thumbnailsSliders[j].goTo('next');
+      }
+    }
+  });
 }
