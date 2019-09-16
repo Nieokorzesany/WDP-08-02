@@ -2,8 +2,8 @@ import { tns } from './../../node_modules/tiny-slider/src/tiny-slider';
 
 // Section New Furniture Slider
 // eslint-disable-next-line no-unused-vars
-const newFurnitureSlider = tns({
-  container: '.new-furniture-slider',
+
+const option = {
   items: 1,
   slideBy: 'page',
   controls: false,
@@ -11,6 +11,7 @@ const newFurnitureSlider = tns({
   swipeAngle: 20,
   startIndex: 1,
   navContainer: '.slider-pagination-dots',
+  gutter: 15,
   responsive: {
     576: {
       items: 2
@@ -22,8 +23,12 @@ const newFurnitureSlider = tns({
       items: 4
     }
   }
-});
-
+};
+tns(Object.assign({ container: '.new-furniture-slider-bed' }, option));
+tns(Object.assign({ container: '.new-furniture-slider-chair' }, option));
+tns(Object.assign({ container: '.new-furniture-slider-sofa' }, option));
+tns(Object.assign({ container: '.new-furniture-slider-table' }, option));
+tns(Object.assign({ container: '.new-furniture-slider-dining' }, option));
 // Section Brand Slider
 const brandsSlider = tns({
   container: '.brands-slider .row',
@@ -282,4 +287,34 @@ for (let i = 0; i < thumbnailsControlArrows.length; i++) {
       }
     }
   });
+}
+
+const tabs = document.querySelectorAll('#nav-tab li > a');
+
+function tabClick (event) {
+  event.preventDefault();
+
+  for (let i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active');
+  }
+
+  let clickedTab = event.currentTarget;
+  clickedTab.classList.add('active');
+
+  let contentPanes = document.querySelectorAll('.tab-pane');
+  for (let i = 0; i < contentPanes.length; i++) {
+    contentPanes[i].classList.remove('active');
+  }
+
+  let anchorReference = event.target;
+
+  let activePaneId = anchorReference.getAttribute('href');
+
+  let activePane = document.querySelector(activePaneId);
+
+  activePane.classList.add('active');
+}
+
+for (let i = 0; i < tabs.length; i++) {
+  tabs[i].addEventListener('click', tabClick);
 }

@@ -1,7 +1,7 @@
 .new-furniture-slider {
   max-height: 520px;
   .slide {
-    width: 20%;
+    width: 25%;
   }
 }
 
@@ -146,5 +146,35 @@
     margin-right: 15px;
     font-weight: 100;
     text-decoration: line-through;
+  }
+}
+
+.tab-pane {
+  position: relative;
+  display: none;
+  animation: fadeEffect 1s;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.product-dots {
+  position: absolute;
+  z-index: 2;
+  right: -15px;
+  top: -58px;
+}
+
+.pagination-dot-li.tns-nav-active a {
+  background-color: $primary;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
