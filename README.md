@@ -2,11 +2,11 @@
 
 ## Opis projektu
 
-DO UZUPEŁNIENIA
+Projekt polega na dopracowaniu rozpoczętej strony sklepu internetowego.
 
 ## Demo
 
-DO UZUPEŁNIENIA
+[Link do strony z podglądem projektu](https://trusting-lovelace-0f4130.netlify.com/#).
 
 ## Inicjacja projektu
 
@@ -34,4 +34,25 @@ dla plików, które zostały wybrane do za-commit'owania.
 
 ## Konwencje i dobre praktyki
 
-DO UZUPEŁNIENIA
+1. Ogólne konwencje i dobre praktyki
+
+- wykorzystanie frameworka bootstrap,
+- wykorzystanie biblioteki ikon fontawesome,
+- podział pliku index.html na sekcje,
+- podział pliku style.scss na sekcje,
+
+2. Style CSS
+
+- wykorzystanie preprocesora SCSS,
+- wykorzystanie zmiennych,
+- wykorzystanie placeholdera,
+
+3. Javascript
+
+- skrypty projektu znajdują się w pliku app.js,
+- wykorzystanie eslint do weryfikacji kodu,
+- wykorzsytanie biblioteki tiny-slider do obsługi sliderów w projekcie.
+
+4. Repozytorium GIT
+   [Link do repozytorium projektu](https://github.com/kstobiecki/WDP-08-02).
+   Merge zmian lub nowych funkcjonalności w projekcie wymaga co najmniej jednego approve od pozostałych członków zespołu.
