@@ -1,5 +1,5 @@
 .section--promotions {
-  padding: 40px 0;
+  padding-bottom: 50px;
   .wrapper {
     justify-content: space-between;
     .col {
@@ -26,7 +26,7 @@
           line-height: 1.1;
           padding: 0 20px;
           width: 100%;
-          color: white;
+          color: $white;
           margin: 0;
           font-size: 28px;
           font-weight: 600;
@@ -41,10 +41,10 @@
           width: fit-content;
           padding: 5px 10px;
           display: block;
-          color: white;
+          color: $white;
           margin: 10px 20px;
           margin-bottom: 15px;
-          border: 2px solid white;
+          border: 2px solid $white;
           font-weight: 900;
           font-size: 40px;
         }
@@ -102,7 +102,7 @@
           .secondLine2 {
             margin-left: 5%;
             font-size: 12px;
-            color: inherit;
+            color: $black;
             font-weight: bold;
           }
         }
